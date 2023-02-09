@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+</head>
+<style>
+    body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    }
+    
+    th {
+        background-color: black;
+        color: white;
+        font-weight: bold;
+        font-size: 25px;
+    }
+    
+    td {
+        font-weight: bold;
+        font-size: 18px;
+    }
+</style>
+
+<body>
+    <!-- <h1 *ngFor="let CUR of currencyData">{{ CUR }}</h1> -->
+    <!-- <h1>{{ CUR.EUR }}</h1> -->
+    <!-- <td *ngFor="let CUR of currencyData">{{ CUR.name }}</td> -->
+    <!-- {{ currencyData }} -->
+    <table border="2" cellspacing="5px" cellpadding="5px" align="center">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Capital</th>
+                <th>Currencies</th>
+                <th>Flag</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let c of data">
+                <td>{{ c.name }}</td>
+                <td>{{ c.capital }}</td>
+                <td>{{ c.currencies[0].code }}</td>
+                <td>
+                    <img height="85px" width="110px" src="{{ c.flags.svg }} " />
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+
+</html>
